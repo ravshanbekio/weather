@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>weather2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'img/icon1.png' %}" type="image/png">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="weather_info">
+            <button class="weather-status"></button>
+                
+        </div>
+        <div class="text1">{{ region }} ,{{ country }} <i class="fa-solid fa-location-dot"></i></div>
+        <form action="{% url 'get-weather' %}" class="search" method="get" >
+            <input type="text" name="shahar" class="input" autofocus><div class="btn1"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </form>
+        <div class="info">
+            {{ main_temp }}℃
+        </div>
+        <div class="cardlar">
+            <div class="card">
+                <h3>Min-temp</h3>
+                <span><i class="fa-solid fa-temperature-empty"></i></span>
+                <span class="min">{{ min_temp }}℃</span> 
+                
+            </div>
+            <div class="card">
+                <h3>Max-temp</h3>
+                <span><i class="fa-solid fa-temperature-full"></i></i></span>
+                <span class="max">{{ max_temp }}℃</span>
+            </div>
+            <div class="card">
+                <h3>Wind speed</h3>
+                <span class="wind_speed">{{ wind }} m/s</span>
+            </div>
+            <div class="card">
+                <h3>Updated <br> time</h3>
+                <span class="time">{{ updated_time }}</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+</html>

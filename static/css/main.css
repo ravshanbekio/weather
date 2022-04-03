@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background: url(../img/nature-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.container{
+    width: 70%;
+    height: 70vh;
+    box-shadow: 0px 0px 100px 20px rgba(255, 255, 255, 0.856);
+    border-radius: 20px;
+    padding: 40px 60px;
+    background-color: rgba(255, 255, 255, 0.295);
+    /* backdrop-filter: blur(1px); */
+    position: relative;
+}
+.loaders{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.705);
+    color: white;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    z-index: 9999;
+    backdrop-filter: blur(1px);
+    background: url(../gif/loading.gif);
+    background-position: center;
+    text-align: center;
+}
+.loader{
+    margin-top: 40vh;
+}
+.active{
+    display: none;
+}
+.btn{
+    width: 80px;
+    border: 1px solid white;
+    margin: 0 auto;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 5px;
+    user-select: none;
+    display: none;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    box-shadow: 0px 0px 20px 1px white;
+    transform: scale(1.08);
+}
+.weather_info{
+    position: absolute;
+    width: 430px;
+    height: 240px;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-size: 120%;
+    object-fit: cover;
+    background-position: center;
+}
+.weather_info button{
+    padding: 0px 15px;
+    margin: 0 auto;
+    /* background: transparent; */
+    margin-top: 10px;
+    border-radius: 15px;
+    display: block;
+    background: linear-gradient(120deg, rgba(11, 137, 255, 0.623),rgba(8, 255, 28, 0.589));
+    color: white;
+    border: none;
+}
+.weather-status{
+    font-size: 25px;
+}
+.text1{
+    font-size: 40px;
+}
+.search{
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.445);
+    display: flex;
+    border-radius: 6px;
+    align-items: center;
+    margin: 20px 0px;
+}
+.input{
+    width: 93%;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 20px;
+}
+.info{
+    width: 100px;
+    font-size: 70px;
+    text-align: center;
+    /* color: white; */
+}
+.cardlar{
+    width: 100%;
+    /* height: 100px; */
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+}
+.min, .max, .wind_speed, .time{
+    position: absolute;
+    bottom: -5px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+}
+@media (max-width: 446.9px){
+    body{
+        background: url(../img/background\ phone.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .container{
+        width: 80%;
+        height: 90vh;
+        box-shadow: none;
+        border-radius: 5px;
+        padding: 10px 10px;
+        background-color: rgba(255, 255, 255, 0);
+        /* border: 1px solid white; */
+        box-shadow: 0px 0px 20px 5px black;
+        backdrop-filter: blur(1px);
+    }
+    .text1{
+        font-size: 26px;
+        text-align: center;
+    }
+    .search{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .input{
+        height: 30px;
+        font-size: 15px;
+        z-index: 99;
+    }
+    .info{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .cardlar{
+        margin-top: 35vh;
+        background-color: rgba(0, 0, 0, 0.39);
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .card{
+        width: 110px;
+        height: 100px;
+        color: white;
+        font-size: 12px;
+        height: 60px;
+    }
+    .card span{
+        font-size: 14px;
+    }
+    .weather_info{
+        height: 200px;
+        width: 90%;
+        top: 210px;
+        left: 5%;
+        background-size: 110% !important;
+        object-fit: cover;
+        background-position: center !important;
+    }
+    .loaders{
+        background-size: 100% !important;
+        background-repeat: no-repeat;
+        height: 100vh !important;
+        background-color: black;
+    }
+    .loader{
+        font-size: 30px;
+    }
+    .min, .max, .wind_speed, .time{
+        bottom: 0px;
+    }
+}
